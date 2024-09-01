@@ -1,19 +1,22 @@
+package uiTest;
+
 import Drivers.Driver;
 import Helper.*;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
 public class BaseTest {
 
-    WebDriver driver;
-    AlertHelper alertHelper;
-    BrowserManager browserManager;
-    DropDownHelper dropDownHelper;
-    FrameHelper frameHelper;
-    WebElementHelper webElementHelper;
-    WindowHelper windowHelper;
-    DemoQaPages demoQaPages;
+    public WebDriver driver;
+    public AlertHelper alertHelper;
+    public BrowserManager browserManager;
+    public DropDownHelper dropDownHelper;
+    public FrameHelper frameHelper;
+    public WebElementHelper webElementHelper;
+    public WindowHelper windowHelper;
+    public DemoQaPages demoQaPages;
 
     @BeforeClass(alwaysRun = true)
     public void setUp() {
@@ -30,6 +33,6 @@ public class BaseTest {
     }
     @AfterClass(alwaysRun = true)
     public void tearDown(){
-        driver.close();
+        Driver.closeDriver();
     }
 }
